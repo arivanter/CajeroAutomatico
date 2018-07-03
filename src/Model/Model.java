@@ -5,18 +5,10 @@
  */
 package Model;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import static Model.Serializa_Deserializa.deserealiza;
-import java.util.Set;
+import static Model.Serializa_Deserializa.serializa;
 
 /**
  *
@@ -26,16 +18,12 @@ public class Model {
 
     private static Tarjeta T = new Tarjeta();
     private static ArrayList<Tarjeta> ListaTarjetas = new ArrayList<>();
-
-    public static boolean validar(int noTarjeta, int NIP) throws IOException {
-        if (T.getNo_tarjeta() == noTarjeta && T.getNIP() == NIP) {
-            return true;
-        }
-        return false;
-
+    
+    public static boolean validarNIP(int noTarjeta, int NIP) throws IOException {
+        return T.getNo_tarjeta() == noTarjeta && T.getNIP() == NIP;
     }
 
-    public static boolean EncontrarTarjeta(int noTarjeta) throws IOException {
+    public static boolean ValidarTarjeta(int noTarjeta) throws IOException {
         ListaTarjetas = deserealiza();
         for (Tarjeta ListaT : ListaTarjetas) {
             if (ListaT.getNo_tarjeta() == noTarjeta) {
@@ -47,15 +35,23 @@ public class Model {
         return false;
     }
 
-    public static boolean VertificarRetiro(int no_tarjeta, float cantidad) {
-        if (T.getNo_tarjeta() == no_tarjeta && T.getSaldo() >= cantidad) {
-            return true;
+    public static int ValidarCantidad(float cantidad) throws IOException {
+        if(cantidad % 50 == 0 && cantidad <= T.getSaldo()){
+            ActualizarCuenta(cantidad);
+            serializa(ListaTarjetas);
+            return 1;
         }
-        return false;
-
+        if(cantidad % 50 == 0 && cantidad > T.getSaldo()){
+            return 2;
+        }
+        if(cantidad % 50 != 0 && cantidad <= T.getSaldo()){
+            return 3;
+        }
+        return 4;
+        
     }
 
-    public static void ActualizarCuenta(int no_tarjeta, float cantidad) {
+    public static void ActualizarCuenta(float cantidad) {
 
         for (Tarjeta ListaT : ListaTarjetas) {
             if (T.getNo_tarjeta() == ListaT.getNo_tarjeta()) {
