@@ -5,7 +5,6 @@
  */
 package Model;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,6 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static Model.Serializa_Deserializa.deserealiza;
 import java.util.Set;
+import jdk.nashorn.internal.ir.Symbol;
 
 /**
  *
@@ -26,7 +26,7 @@ public class Model {
 
     private static Tarjeta T = new Tarjeta();
     private static ArrayList<Tarjeta> ListaTarjetas = new ArrayList<>();
-
+    
     public static boolean validar(int noTarjeta, int NIP) throws IOException {
         if (T.getNo_tarjeta() == noTarjeta && T.getNIP() == NIP) {
             return true;
