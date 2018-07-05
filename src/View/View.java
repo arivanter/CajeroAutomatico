@@ -10,10 +10,14 @@ package View;
  * @author devel
  */
 public class View {
+<<<<<<< HEAD
     public View() {
         
     }
     public static void main(String[] args) {
         new ui_1().setVisible(true);
     }
+=======
+    
+>>>>>>> master
 }
