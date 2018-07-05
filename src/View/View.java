@@ -13,7 +13,16 @@ public class View {
     public View() {
         
     }
-    public static void main(String[] args) {
+    
+    public static void startup(){
         new ui_1().setVisible(true);
+    }
+
+    public static void launch_UI_1(){
+        new ui_2().setVisible(true);
+    }
+    
+    public static void main(String[] args) {
+        startup();
     }
 }
