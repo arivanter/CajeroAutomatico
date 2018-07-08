@@ -9,12 +9,12 @@ package View;
  *
  * @author devel
  */
-public class ui_2 extends javax.swing.JFrame {
+public class ui_05 extends javax.swing.JFrame {
 
     /**
      * Creates new form ui_2
      */
-    public ui_2() {
+    public ui_05() {
         initComponents();
     }
 
@@ -27,7 +27,6 @@ public class ui_2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        f_pwd = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         b_ok = new javax.swing.JButton();
         b_cancelar = new javax.swing.JButton();
@@ -35,18 +34,11 @@ public class ui_2 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1200, 700));
 
-        f_pwd.setFont(new java.awt.Font("Consolas", 0, 75)); // NOI18N
-        f_pwd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                f_pwdActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Consolas", 0, 80)); // NOI18N
-        jLabel1.setText("Inserte su pin:");
+        jLabel1.setText("!NIP incorrecto!");
 
         b_ok.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        b_ok.setText("OK");
+        b_ok.setText("Reintentar");
         b_ok.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 b_okMouseClicked(evt);
@@ -54,10 +46,15 @@ public class ui_2 extends javax.swing.JFrame {
         });
 
         b_cancelar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        b_cancelar.setText("CANCELAR");
+        b_cancelar.setText("Salir");
         b_cancelar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 b_cancelarMouseClicked(evt);
+            }
+        });
+        b_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_cancelarActionPerformed(evt);
             }
         });
 
@@ -65,30 +62,23 @@ public class ui_2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(264, 264, 264))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(f_pwd, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(319, 319, 319))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addComponent(b_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
                 .addComponent(b_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(93, 93, 93)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(f_pwd, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(b_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(b_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -98,19 +88,17 @@ public class ui_2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void f_pwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_pwdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_f_pwdActionPerformed
-
     private void b_okMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_okMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_b_okMouseClicked
 
     private void b_cancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_cancelarMouseClicked
-        // TODO add your handling code here:
-        new ui_1().setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_b_cancelarMouseClicked
+
+    private void b_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,21 +117,35 @@ public class ui_2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ui_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ui_05.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ui_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ui_05.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ui_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ui_05.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ui_2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ui_05.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ui_2().setVisible(true);
+                new ui_05().setVisible(true);
             }
         });
     }
@@ -151,7 +153,6 @@ public class ui_2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_cancelar;
     private javax.swing.JButton b_ok;
-    private javax.swing.JPasswordField f_pwd;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

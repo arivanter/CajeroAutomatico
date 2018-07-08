@@ -9,12 +9,12 @@ package View;
  *
  * @author devel
  */
-public class ui_3 extends javax.swing.JFrame {
+public class ui_03 extends javax.swing.JFrame {
 
     /**
      * Creates new form ui_3
      */
-    public ui_3() {
+    public ui_03() {
         initComponents();
     }
 
@@ -75,7 +75,7 @@ public class ui_3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_okMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_okMouseClicked
-        new ui_1().setVisible(true);
+        new ui_01().setVisible(true);
         dispose();
     }//GEN-LAST:event_b_okMouseClicked
 
@@ -96,20 +96,21 @@ public class ui_3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ui_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ui_03.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ui_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ui_03.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ui_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ui_03.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ui_3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ui_03.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ui_3().setVisible(true);
+                new ui_03().setVisible(true);
             }
         });
     }
