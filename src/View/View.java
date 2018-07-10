@@ -10,6 +10,7 @@ package View;
  * @author devel
  */
 public class View {
+    
     public View() {
         
     }
@@ -25,4 +26,6 @@ public class View {
     public static void main(String[] args) {
         startup();
     }
+
+
 }
