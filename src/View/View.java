@@ -16,11 +16,11 @@ public class View {
     }
     
     public static void startup(){
-        new ui_1().setVisible(true);
+        new ui_01().setVisible(true);
     }
 
     public static void launch_UI_1(){
-        new ui_2().setVisible(true);
+        new ui_02().setVisible(true);
     }
     
     public static void main(String[] args) {
