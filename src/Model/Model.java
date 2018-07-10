@@ -63,4 +63,11 @@ public class Model {
         }
 
     }
+    
+    public static double consultaSaldo(int noTarjeta){
+        if(noTarjeta == T.getNo_tarjeta()){
+            return T.getSaldo();
+        }
+        return -1;
+    }
 }
