@@ -10,10 +10,7 @@ package View;
  * @author devel
  */
 public class View {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
+    
     public View() {
         
     }
@@ -21,7 +18,6 @@ public class View {
     public static void startup(){
         new ui_1().setVisible(true);
     }
-<<<<<<< HEAD
 
     public static void launch_UI_1(){
         new ui_2().setVisible(true);
@@ -30,9 +26,6 @@ public class View {
     public static void main(String[] args) {
         startup();
     }
-=======
-=======
-    
->>>>>>> master
->>>>>>> master
+
+
 }
