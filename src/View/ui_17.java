@@ -5,6 +5,8 @@
  */
 package View;
 
+import Controller.controller;
+
 /**
  *
  * @author devel
@@ -14,8 +16,11 @@ public class ui_17 extends javax.swing.JFrame {
     /**
      * Creates new form ui_16
      */
-    public ui_17() {
+    
+    controller c;
+    public ui_17(controller c) {
         initComponents();
+        this.c = c;
     }
 
     /**
@@ -29,7 +34,7 @@ public class ui_17 extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        b_ok = new javax.swing.JButton();
+        b_efectivo = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,10 +45,10 @@ public class ui_17 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Consolas", 0, 120)); // NOI18N
         jLabel4.setText("Retire su");
 
-        b_ok.setText("(efectivo) ");
-        b_ok.addMouseListener(new java.awt.event.MouseAdapter() {
+        b_efectivo.setText("(efectivo) ");
+        b_efectivo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                b_okMouseClicked(evt);
+                b_efectivoMouseClicked(evt);
             }
         });
 
@@ -58,7 +63,7 @@ public class ui_17 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(403, 403, 403)
-                        .addComponent(b_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(b_efectivo, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(302, 302, 302)
                         .addComponent(jLabel4))
@@ -80,62 +85,24 @@ public class ui_17 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                .addComponent(b_ok)
+                .addComponent(b_efectivo)
                 .addGap(69, 69, 69))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void b_okMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_okMouseClicked
-        new ui_01().setVisible(true);
+    private void b_efectivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_efectivoMouseClicked
+        c.UsuarioObtieneEfectivo();
         dispose();
-    }//GEN-LAST:event_b_okMouseClicked
+    }//GEN-LAST:event_b_efectivoMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ui_17.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ui_17.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ui_17.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ui_17.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ui_17().setVisible(true);
-            }
-        });
-    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton b_ok;
+    private javax.swing.JButton b_efectivo;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

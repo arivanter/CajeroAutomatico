@@ -27,7 +27,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="403" max="-2" attributes="0"/>
-                      <Component id="b_ok" min="-2" pref="389" max="-2" attributes="0"/>
+                      <Component id="b_efectivo" min="-2" pref="389" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="302" max="-2" attributes="0"/>
@@ -56,7 +56,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" pref="107" max="-2" attributes="0"/>
               <EmptySpace pref="139" max="32767" attributes="0"/>
-              <Component id="b_ok" min="-2" max="-2" attributes="0"/>
+              <Component id="b_efectivo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -79,12 +79,12 @@
         <Property name="text" type="java.lang.String" value="Retire su"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="b_ok">
+    <Component class="javax.swing.JButton" name="b_efectivo">
       <Properties>
         <Property name="text" type="java.lang.String" value="(efectivo) "/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="b_okMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="b_efectivoMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">

@@ -5,17 +5,34 @@
  */
 package View;
 
+import Controller.controller;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Ruuubs
  */
 public class ui_09 extends javax.swing.JFrame {
 
-    
-    public ui_09() {
+    controller c;
+    String input ="";
+    int cant;
+
+    public ui_09(controller c) {
         initComponents();
+        this.c = c;
     }
 
+    
+    public void actualiza(){
+        this.t_cant.setText(this.input);
+    }
+    
+    public void limpia(){
+        input = "";
+        actualiza();;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,23 +43,22 @@ public class ui_09 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jScroll_cantidad = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jButton_corregir = new javax.swing.JButton();
-        Button_1 = new javax.swing.JButton();
-        Button_2 = new javax.swing.JButton();
-        Button_3 = new javax.swing.JButton();
-        Button_4 = new javax.swing.JButton();
-        Button_6 = new javax.swing.JButton();
-        Button_5 = new javax.swing.JButton();
-        Button_7 = new javax.swing.JButton();
-        Button_9 = new javax.swing.JButton();
-        Button_8 = new javax.swing.JButton();
-        Button_asterisco = new javax.swing.JButton();
-        Button_gato = new javax.swing.JButton();
-        Button_0 = new javax.swing.JButton();
-        jButton_Confirmar = new javax.swing.JButton();
+        b_corregir = new javax.swing.JButton();
+        b_num_1 = new javax.swing.JButton();
+        b_num_2 = new javax.swing.JButton();
+        b_num_3 = new javax.swing.JButton();
+        b_num_4 = new javax.swing.JButton();
+        b_num_6 = new javax.swing.JButton();
+        b_num_5 = new javax.swing.JButton();
+        b_num_7 = new javax.swing.JButton();
+        b_num_9 = new javax.swing.JButton();
+        b_num_8 = new javax.swing.JButton();
+        b_char_1 = new javax.swing.JButton();
+        b_char_2 = new javax.swing.JButton();
+        b_num_0 = new javax.swing.JButton();
+        b_confirmar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        t_cant = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1200, 700));
@@ -50,59 +66,113 @@ public class ui_09 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         jLabel1.setText("Ingrese la cantidad");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScroll_cantidad.setViewportView(jTextArea1);
-
-        jButton_corregir.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jButton_corregir.setText("Corregir");
-
-        Button_1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_1.setText("1");
-
-        Button_2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_2.setText("2");
-
-        Button_3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_3.setText("3");
-
-        Button_4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_4.setText("4");
-
-        Button_6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_6.setText("6");
-
-        Button_5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_5.setText("5");
-
-        Button_7.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_7.setText("7");
-        Button_7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_7ActionPerformed(evt);
+        b_corregir.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_corregir.setText("Corregir");
+        b_corregir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_corregirMouseClicked(evt);
             }
         });
 
-        Button_9.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_9.setText("9");
+        b_num_1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_1.setText("1");
+        b_num_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_1MouseClicked(evt);
+            }
+        });
 
-        Button_8.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_8.setText("8");
+        b_num_2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_2.setText("2");
+        b_num_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_2MouseClicked(evt);
+            }
+        });
 
-        Button_asterisco.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_asterisco.setText("*");
+        b_num_3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_3.setText("3");
+        b_num_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_3MouseClicked(evt);
+            }
+        });
 
-        Button_gato.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_gato.setText("#");
+        b_num_4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_4.setText("4");
+        b_num_4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_4MouseClicked(evt);
+            }
+        });
 
-        Button_0.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        Button_0.setText("0");
+        b_num_6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_6.setText("6");
+        b_num_6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_6MouseClicked(evt);
+            }
+        });
 
-        jButton_Confirmar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jButton_Confirmar.setText("Confirmar");
+        b_num_5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_5.setText("5");
+        b_num_5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_5MouseClicked(evt);
+            }
+        });
+
+        b_num_7.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_7.setText("7");
+        b_num_7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_7MouseClicked(evt);
+            }
+        });
+
+        b_num_9.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_9.setText("9");
+        b_num_9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_9MouseClicked(evt);
+            }
+        });
+
+        b_num_8.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_8.setText("8");
+        b_num_8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_8MouseClicked(evt);
+            }
+        });
+
+        b_char_1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_char_1.setText("*");
+
+        b_char_2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_char_2.setText("#");
+
+        b_num_0.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_num_0.setText("0");
+        b_num_0.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_num_0MouseClicked(evt);
+            }
+        });
+
+        b_confirmar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        b_confirmar.setText("Confirmar");
+        b_confirmar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                b_confirmarMouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Consolas", 0, 36)); // NOI18N
         jLabel2.setText("Solo multiplos de 50.");
+
+        t_cant.setEditable(false);
+        t_cant.setFont(new java.awt.Font("Tahoma", 0, 60)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,46 +181,47 @@ public class ui_09 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(149, 149, 149)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
-                                .addComponent(jScroll_cantidad))
-                            .addComponent(jButton_Confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                            .addComponent(t_cant, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(b_confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Button_1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_num_1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(Button_2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(b_num_2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Button_4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_num_4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(Button_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(b_num_5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Button_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(b_num_6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(b_num_3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Button_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_num_7, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(Button_8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(b_num_8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Button_asterisco, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(b_char_1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(Button_0, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(b_num_0, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Button_gato, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton_corregir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(b_char_2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(b_num_9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(b_corregir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
@@ -158,131 +229,138 @@ public class ui_09 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton_corregir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScroll_cantidad))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Button_1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Button_4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Button_7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Button_asterisco, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_gato, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Button_0, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(b_corregir, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(b_num_1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b_num_2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b_num_3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(b_num_4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b_num_6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b_num_5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(b_num_7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b_num_9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b_num_8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(b_char_1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b_char_2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(b_num_0, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(98, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(117, 117, 117)
+                                .addComponent(b_confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(77, 77, 77))))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                        .addComponent(jButton_Confirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(t_cant, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Button_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_7ActionPerformed
+    private void b_num_1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_1MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Button_7ActionPerformed
+        this.input+= 1;
+        actualiza();
+    }//GEN-LAST:event_b_num_1MouseClicked
 
+    private void b_num_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_2MouseClicked
+        // TODO add your handling code here:
+        this.input+= 2;
+        actualiza();
+    }//GEN-LAST:event_b_num_2MouseClicked
+
+    private void b_num_3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_3MouseClicked
+        // TODO add your handling code here:
+        this.input+= 3;
+        actualiza();
+    }//GEN-LAST:event_b_num_3MouseClicked
+
+    private void b_num_4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_4MouseClicked
+        // TODO add your handling code here:}
+        this.input+= 4;
+        actualiza();
+    }//GEN-LAST:event_b_num_4MouseClicked
+
+    private void b_num_5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_5MouseClicked
+        // TODO add your handling code here:
+        this.input+= 5;
+        actualiza();
+    }//GEN-LAST:event_b_num_5MouseClicked
+
+    private void b_num_6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_6MouseClicked
+        // TODO add your handling code here:
+        this.input+= 6;
+        actualiza();
+    }//GEN-LAST:event_b_num_6MouseClicked
+
+    private void b_num_7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_7MouseClicked
+        // TODO add your handling code here:
+        this.input+= 7;
+        actualiza();
+    }//GEN-LAST:event_b_num_7MouseClicked
+
+    private void b_num_8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_8MouseClicked
+        // TODO add your handling code here:
+        this.input+= 8;
+        actualiza();
+    }//GEN-LAST:event_b_num_8MouseClicked
+
+    private void b_num_9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_9MouseClicked
+        // TODO add your handling code here:
+        this.input+= 9;
+        actualiza();
+    }//GEN-LAST:event_b_num_9MouseClicked
+
+    private void b_num_0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_num_0MouseClicked
+        // TODO add your handling code here:
+        this.input+= 0;
+        actualiza();
+    }//GEN-LAST:event_b_num_0MouseClicked
+
+    private void b_corregirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_corregirMouseClicked
+        // TODO add your handling code here:
+        limpia();
+    }//GEN-LAST:event_b_corregirMouseClicked
+
+    private void b_confirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b_confirmarMouseClicked
+        // TODO add your handling code here:
+        c.UsuarioConfirmaMensaje();
+        dispose();
+    }//GEN-LAST:event_b_confirmarMouseClicked
+
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ui_09.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ui_09.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ui_09.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ui_09.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ui_09().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button_0;
-    private javax.swing.JButton Button_1;
-    private javax.swing.JButton Button_2;
-    private javax.swing.JButton Button_3;
-    private javax.swing.JButton Button_4;
-    private javax.swing.JButton Button_5;
-    private javax.swing.JButton Button_6;
-    private javax.swing.JButton Button_7;
-    private javax.swing.JButton Button_8;
-    private javax.swing.JButton Button_9;
-    private javax.swing.JButton Button_asterisco;
-    private javax.swing.JButton Button_gato;
-    private javax.swing.JButton jButton_Confirmar;
-    private javax.swing.JButton jButton_corregir;
+    private javax.swing.JButton b_char_1;
+    private javax.swing.JButton b_char_2;
+    private javax.swing.JButton b_confirmar;
+    private javax.swing.JButton b_corregir;
+    private javax.swing.JButton b_num_0;
+    private javax.swing.JButton b_num_1;
+    private javax.swing.JButton b_num_2;
+    private javax.swing.JButton b_num_3;
+    private javax.swing.JButton b_num_4;
+    private javax.swing.JButton b_num_5;
+    private javax.swing.JButton b_num_6;
+    private javax.swing.JButton b_num_7;
+    private javax.swing.JButton b_num_8;
+    private javax.swing.JButton b_num_9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScroll_cantidad;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JFormattedTextField t_cant;
     // End of variables declaration//GEN-END:variables
 }
