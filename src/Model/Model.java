@@ -52,7 +52,6 @@ public class Model {
     }
 
     public static void ActualizarCuenta(float cantidad) {
-
         for (Tarjeta ListaT : ListaTarjetas) {
             if (T.getNo_tarjeta() == ListaT.getNo_tarjeta()) {
                 float c;
